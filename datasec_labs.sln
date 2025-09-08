@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datasec_lab1", "datasec_lab1\datasec_lab1.csproj", "{A53ACAF3-3149-4ED0-95C6-B205B5E0E2CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datasec_lab2", "datasec_lab2\datasec_lab2.csproj", "{1F6139A7-133F-4129-B6DA-62E5727B5704}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{5BB0BD40-C3E0-424C-A0C2-459FD99FAAC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A53ACAF3-3149-4ED0-95C6-B205B5E0E2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A53ACAF3-3149-4ED0-95C6-B205B5E0E2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A53ACAF3-3149-4ED0-95C6-B205B5E0E2CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6139A7-133F-4129-B6DA-62E5727B5704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6139A7-133F-4129-B6DA-62E5727B5704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6139A7-133F-4129-B6DA-62E5727B5704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6139A7-133F-4129-B6DA-62E5727B5704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB0BD40-C3E0-424C-A0C2-459FD99FAAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB0BD40-C3E0-424C-A0C2-459FD99FAAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB0BD40-C3E0-424C-A0C2-459FD99FAAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB0BD40-C3E0-424C-A0C2-459FD99FAAC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
