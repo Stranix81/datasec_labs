@@ -5,7 +5,7 @@ using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace datasec_lab1.Trisemus
+namespace ClassLibrary.Trisemus
 {
     public class Trisemus
     {

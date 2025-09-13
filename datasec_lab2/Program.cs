@@ -1,4 +1,4 @@
-﻿using datasec_lab1;
+﻿using ClassLibrary;
 using datasec_lab2.Wheatstone;
 
 Message message = new Message("../../../../message.txt");

@@ -1,6 +1,6 @@
-﻿using datasec_lab1;
-using datasec_lab1.Skitala;
-using datasec_lab1.Trisemus;
+﻿using ClassLibrary;
+using ClassLibrary.Skitala;
+using ClassLibrary.Trisemus;
 using System.Data;
 
 Message message = new Message("../../../../message.txt");

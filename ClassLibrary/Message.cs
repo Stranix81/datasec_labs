@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace datasec_lab1
+namespace ClassLibrary
 {
     public class Message
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace datasec_lab1.Skitala
+namespace ClassLibrary.Skitala
 {
     public class Skitala
     {
