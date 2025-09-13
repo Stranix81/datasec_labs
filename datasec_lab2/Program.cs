@@ -22,8 +22,8 @@ List<int> secondKey = new List<int> { 15, 2, 31, 4, 27, 11, 29, 30, 18, 19, 25, 
 #endregion
 
 #region РАСШИФРОВКА
-Message decryptedMessage = new Message(wheatstone.Decrypt(message, firstKey, secondKey));
-Console.WriteLine("\nDecrypted message:");
-decryptedMessage.PrintMessage();
-decryptedMessage.ToFile();
+//Message decryptedMessage = new Message(wheatstone.Decrypt(message, firstKey, secondKey));
+//Console.WriteLine("\nDecrypted message:");
+//decryptedMessage.PrintMessage();
+//decryptedMessage.ToFile();
 #endregion
