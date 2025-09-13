@@ -28,10 +28,10 @@ encryptedMessage.ToFile();
 Console.WriteLine("\n\n\nCryptoanalyze:\n");
 List<string> keywords = new List<string>()
 {
-    "АБВГДЕОЫ",
-    "ПЕТУХОВИЧ",
-    "ЖАЛОСВИН",
-    "ШИФРОВКА"
+    "АБВГДЕО",
+    "ПЕТУХИ.",
+    "ЖАЛОСТЬ",
+    "ШИФРОВК"
 };
 Crypt analyzer = new Crypt();
 
