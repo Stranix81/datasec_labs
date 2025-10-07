@@ -46,7 +46,7 @@ namespace datasec_lab3.Caesar
             var result = alphabet.Except(keyword).ToList();
 
             string cleanAlphabet = new string(result.ToArray());
-            Console.WriteLine("\nThe alphabet with no keyword chars:\n" + cleanAlphabet);
+            //Console.WriteLine("\nThe alphabet with no keyword chars:\n" + cleanAlphabet);
 
             return result;
         }
@@ -76,14 +76,15 @@ namespace datasec_lab3.Caesar
 
             FillTable(replTable, alphabet, ClearAlphabet());
 
-            Console.WriteLine("\nReplacement table:");
-            PrintTable(replTable);
+            //Console.WriteLine("\nReplacement table:");
+            //PrintTable(replTable);
 
             List<char> result = [];
             for (int i = 0; i < message.msg.Count; i++)
             {
                 var charPos = FindLettersPos(message.msg[i], replTable, false);
-                result.Add(replTable[charPos.row - 1, charPos.col]);
+                //result.Add(replTable[charPos.row - 1, charPos.col]);
+                result.Add(replTable[0, charPos.col]);
             }
 
             return result;

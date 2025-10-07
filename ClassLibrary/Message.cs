@@ -45,5 +45,10 @@ namespace ClassLibrary
             string output = new string(msg.ToArray());
             streamWriter.Write(output);
         }
+
+        public override string ToString()
+        {
+            return new string(msg.ToArray());
+        }
     };
 }

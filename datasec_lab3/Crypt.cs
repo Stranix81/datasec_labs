@@ -21,13 +21,13 @@ namespace datasec_lab3
                 0.090, 0.023, 0.040, 0.045, 0.053, // О, П, Р, С, Т
                 0.021, 0.002, 0.009, 0.004, 0.012, // У, Ф, Х, Ц, Ч
                 0.006, 0.003, 0.014, 0.016, 0.014, // Ш, Щ, Ъ, Ы, Ь
-                0.003, 0.006, 0.018, 0.012, 0.175  // Э, Ю, Я, ТОЧКА, ПРОБЕЛ
+                0.003, 0.006, 0.018, 0.175  // Э, Ю, Я, ТОЧКА, ПРОБЕЛ
             ];
 
         public Crypt()
         {
             //keys = [];
-            alphabet = [.. "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ. ".ToCharArray().ToList()];
+            alphabet = [.. "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ".ToCharArray().ToList()];
 
             try
             {
@@ -54,6 +54,7 @@ namespace datasec_lab3
 
             foreach(var letter in alphabet)
             {
+                if (letter == '.') continue;
                 frequencies.Add(CalculateFrequency(letter, message));
             }
 
