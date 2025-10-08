@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datasec_lab3", "datasec_lab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datasec_lab4", "datasec_lab4\datasec_lab4.csproj", "{5659744B-DD7F-4B4D-9499-4B0737F188D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datasec_kurs", "datasec_kurs\datasec_kurs.csproj", "{F9CFCE87-2CBA-4A4B-8F8A-7028F39A4809}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5659744B-DD7F-4B4D-9499-4B0737F188D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5659744B-DD7F-4B4D-9499-4B0737F188D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5659744B-DD7F-4B4D-9499-4B0737F188D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9CFCE87-2CBA-4A4B-8F8A-7028F39A4809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9CFCE87-2CBA-4A4B-8F8A-7028F39A4809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9CFCE87-2CBA-4A4B-8F8A-7028F39A4809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9CFCE87-2CBA-4A4B-8F8A-7028F39A4809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
