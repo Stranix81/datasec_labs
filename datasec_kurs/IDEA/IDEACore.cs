@@ -75,6 +75,12 @@ namespace datasec_kurs.IDEA
             ushort x3 = (ushort)((input[inOff + 4] << 8) | (input[inOff + 5] & 0xff));
             ushort x4 = (ushort)((input[inOff + 6] << 8) | (input[inOff + 7] & 0xff));
 
+
+#if DEBUG
+            Console.WriteLine($"\n\t\t------ IDEA rounds ------");
+#endif
+
+
             int keyIndex = 0;
             for (int round = 0; round < ROUNDS; round++)
             {
@@ -87,25 +93,175 @@ namespace datasec_kurs.IDEA
                 ushort k6 = subKeys[keyIndex++];
 
                 // round transformations
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\n\t\t1) x1 = x1({x1}) MulMod ((2^16)+1) k1({k1}) = ");
+#endif
                 x1 = MulMod(x1, k1);
+#if DEBUG
+                if(round == 0)
+                    Console.Write($"\t\t{x1}");
+#endif
+
+
+
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\n\t\t2) x2 = x2({x2}) AddMod (2^16) k2({k2}) = ");
+#endif
                 x2 = AddMod(x2, k2);
+#if DEBUG
+                if (round == 0)
+                    Console.Write($"\t\t{x2}");
+#endif
+
+
+
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\n\t\t3) x3 = x3({x3}) AddMod (2^16) k3({k3}) = ");
+#endif
                 x3 = AddMod(x3, k3);
+#if DEBUG
+                if (round == 0)
+                    Console.Write($"\t\t{x3}");
+#endif
+
+
+
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\n\t\t4) x4 = x4({x4}) MulMod ((2^16)+1) k4({k4}) = ");
+#endif
                 x4 = MulMod(x4, k4);
+#if DEBUG
+                if (round == 0)
+                    Console.Write($"\t\t{x4}");
+#endif
+
+
 
                 ushort t0 = (ushort)(x1 ^ x3);
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\n\t\t5) t0 = x1({x1}) XOR x3({x3}) =\n\t\t{t0}");
+#endif
+
                 ushort t1 = (ushort)(x2 ^ x4);
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\t\t6) t1 = x2({x2}) XOR x4({x4}) =\n\t\t{t1}");
+#endif
 
+
+
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\t\t7) t0 = t0({t0}) MulMod ((2^16)+1) k5({k5}) = ");
+#endif
                 t0 = MulMod(t0, k5);
-                t1 = AddMod(t1, t0);
-                t1 = MulMod(t1, k6);
-                t0 = AddMod(t0, t1);
+#if DEBUG
+                if (round == 0)
+                    Console.Write($"\t\t{t0}");
+#endif
 
+
+
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\n\t\t8) t1 = t1({t1}) AddMod (2^16) t0({t0}) = ");
+#endif
+                t1 = AddMod(t1, t0);
+#if DEBUG
+                if (round == 0)
+                    Console.Write($"\t\t{t1}");
+#endif
+
+
+
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\n\t\t9) t1 = t1({t1}) MulMod ((2^16)+1) k6({k6}) = ");
+#endif
+                t1 = MulMod(t1, k6);
+#if DEBUG
+                if (round == 0)
+                    Console.Write($"\t\t{t1}");
+#endif
+
+
+
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\n\t\t10) t0 = t0({t0}) AddMod (2^16) t1({t1}) = ");
+#endif
+                t0 = AddMod(t0, t1);
+#if DEBUG
+                if (round == 0)
+                    Console.Write($"\t\t{t0}");
+#endif
+
+
+
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\n\t\t11) x1 = x1({x1}) XOR t1({t1}) = ");
+#endif
                 x1 = (ushort)(x1 ^ t1);
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\t\t{x1}");
+#endif
+
+
+
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\t\t12) x4 = x4({x4}) XOR t0({t0}) = ");
+#endif
                 x4 = (ushort)(x4 ^ t0);
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\t\t{x4}");
+#endif
+
+
+
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\t\t13) x2 = x3({x3}) XOR t0({t0}) = ");
+#endif
                 // exchange x2 and x3
                 ushort tmp = (ushort)(x2 ^ t1);
+
+#if DEBUG
+                ushort x2Debug = x2;
+#endif
+
                 x2 = (ushort)(x3 ^ t0);
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\t\t{x2}");
+#endif
+
+
+
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\t\t14) x3 = x2({x2Debug}) XOR t1({t1}) = ");
+#endif
                 x3 = tmp;
+#if DEBUG
+                if(round == 0)
+                    Console.WriteLine($"\t\t{x3}");
+#endif
+
+
+
+#if DEBUG
+                if (round == 0)
+                    Console.WriteLine($"\n\t\t{round} round:\n\t\tx1:{x1}, x3:{x3}, x2:{x2}, x4:{x4}");
+#endif
             }
 
             // half-round subkeys (4)
@@ -118,6 +274,10 @@ namespace datasec_kurs.IDEA
             ushort y2 = AddMod(x3, fk2);
             ushort y3 = AddMod(x2, fk3);
             ushort y4 = MulMod(x4, fk4);
+
+//#if DEBUG
+//            Console.WriteLine($"\n\t\tLast half-round:\ny1: {y1}, y2: {y2}, y3: {y3}, y4: {y4}");
+//#endif
 
             // write output results (big-endian)
             output[outOff] = (byte)(y1 >> 8);

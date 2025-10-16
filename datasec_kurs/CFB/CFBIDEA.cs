@@ -55,7 +55,7 @@ namespace datasec_kurs.CFB
                 }
 
 #if DEBUG
-                Console.WriteLine($"\tCurrent encrypted block: \n{Encoding.ASCII.GetString(cipherBlock)}");
+                Console.WriteLine($"\n\tCurrent encrypted block: \n{Encoding.ASCII.GetString(cipherBlock)}");
 #endif
 
                 Array.Copy(cipherBlock, 0, output, i, len);
