@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace datasec_kurs.IDEA
+namespace IDEA.Core
 {
     using System;
     using System.Numerics;
