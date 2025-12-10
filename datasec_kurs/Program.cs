@@ -1,6 +1,6 @@
 ﻿using ClassLibrary;
-using datasec_kurs.CFB;
-using datasec_kurs.IDEA;
+using IDEA.CFB;
+using IDEA.Core;
 using System.Text;
 using System.Security.Cryptography;
 

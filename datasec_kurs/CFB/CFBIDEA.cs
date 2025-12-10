@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using datasec_kurs.IDEA;
+using IDEA.Core;
 
-namespace datasec_kurs.CFB
+namespace IDEA.CFB
 {
     public class CFBIDEA
     {
