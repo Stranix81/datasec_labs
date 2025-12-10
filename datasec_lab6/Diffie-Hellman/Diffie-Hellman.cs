@@ -9,11 +9,6 @@ namespace datasec_lab6.Diffie_Hellman
 {
     public class Diffie_Hellman
     {
-        // TO DO
-        // p, g, a, b - from kboard and file
-        // 1 method calls from winform proj
-        // print s to a file
-
         private BigInteger p;
         private BigInteger g;
         private BigInteger privateKey; // a or b
