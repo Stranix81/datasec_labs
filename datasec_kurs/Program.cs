@@ -4,16 +4,17 @@ using IDEA.Core;
 using System.Text;
 using System.Security.Cryptography;
 
-Message message = new Message("../../../../message.txt");
-Console.WriteLine("Original message:");
-message.PrintMessage();
+//Message message = new Message("../../../../message.txt");
+string message = "TRALALERO TRALALA";
+Console.WriteLine($"Original message: {message}");
+//message.PrintMessage();
 
 byte[] msgBytes = Encoding.ASCII.GetBytes(message.ToString());
 Console.WriteLine("\nMessage in bytes (and binary):");
 for (int i = 0; i < msgBytes.Length; i++)
 {
     byte b = msgBytes[i];
-    Console.WriteLine($"{message.msg[i]} -> {b} -> {Convert.ToString(b, 2).PadLeft(8, '0')}");
+    Console.WriteLine($"{message[i]} -> {b} -> {Convert.ToString(b, 2).PadLeft(8, '0')}");
 }
 
 //byte[] key = new byte[16] {
@@ -40,7 +41,7 @@ Console.WriteLine("IV (hex): " + BitConverter.ToString(iv));
 var core = new IDEACore();
 core.Init(key);
 
-var cfb = new CFBIDEA(core, iv);
+var cfb = new CFBIDEA(core, iv, 2);
 
 
 ConsoleColor originalFore = Console.ForegroundColor;

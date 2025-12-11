@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            labelSegmentSizeEncrypt = new Label();
+            textBoxSegmentSizeEncr = new TextBox();
             buttonEncrypt = new Button();
             buttonSaveData = new Button();
             buttonSaveMessageHex = new Button();
@@ -43,6 +45,8 @@
             labelCipherKeyEncr = new Label();
             textBoxIVEncr = new TextBox();
             textBoxKeyEncr = new TextBox();
+            labelSegmentSizeDecrypt = new Label();
+            textBoxSegmentSizeDecr = new TextBox();
             buttonDecrypt = new Button();
             buttonOpenMessageHex = new Button();
             labelDecryptedMessage = new Label();
@@ -69,6 +73,8 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = SystemColors.ControlDark;
+            splitContainer1.Panel1.Controls.Add(labelSegmentSizeEncrypt);
+            splitContainer1.Panel1.Controls.Add(textBoxSegmentSizeEncr);
             splitContainer1.Panel1.Controls.Add(buttonEncrypt);
             splitContainer1.Panel1.Controls.Add(buttonSaveData);
             splitContainer1.Panel1.Controls.Add(buttonSaveMessageHex);
@@ -87,6 +93,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = SystemColors.ControlDark;
+            splitContainer1.Panel2.Controls.Add(labelSegmentSizeDecrypt);
+            splitContainer1.Panel2.Controls.Add(textBoxSegmentSizeDecr);
             splitContainer1.Panel2.Controls.Add(buttonDecrypt);
             splitContainer1.Panel2.Controls.Add(buttonOpenMessageHex);
             splitContainer1.Panel2.Controls.Add(labelDecryptedMessage);
@@ -101,6 +109,22 @@
             splitContainer1.Size = new Size(1093, 465);
             splitContainer1.SplitterDistance = 548;
             splitContainer1.TabIndex = 0;
+            // 
+            // labelSegmentSizeEncrypt
+            // 
+            labelSegmentSizeEncrypt.AutoSize = true;
+            labelSegmentSizeEncrypt.Location = new Point(12, 94);
+            labelSegmentSizeEncrypt.Name = "labelSegmentSizeEncrypt";
+            labelSegmentSizeEncrypt.Size = new Size(115, 15);
+            labelSegmentSizeEncrypt.TabIndex = 16;
+            labelSegmentSizeEncrypt.Text = "Segment size (bytes)";
+            // 
+            // textBoxSegmentSizeEncr
+            // 
+            textBoxSegmentSizeEncr.Location = new Point(138, 91);
+            textBoxSegmentSizeEncr.Name = "textBoxSegmentSizeEncr";
+            textBoxSegmentSizeEncr.Size = new Size(171, 23);
+            textBoxSegmentSizeEncr.TabIndex = 15;
             // 
             // buttonEncrypt
             // 
@@ -135,7 +159,7 @@
             // labelEncrMessage
             // 
             labelEncrMessage.AutoSize = true;
-            labelEncrMessage.Location = new Point(12, 238);
+            labelEncrMessage.Location = new Point(12, 282);
             labelEncrMessage.Name = "labelEncrMessage";
             labelEncrMessage.Size = new Size(109, 15);
             labelEncrMessage.TabIndex = 11;
@@ -143,7 +167,7 @@
             // 
             // textBoxEncrMessage
             // 
-            textBoxEncrMessage.Location = new Point(138, 235);
+            textBoxEncrMessage.Location = new Point(138, 279);
             textBoxEncrMessage.Multiline = true;
             textBoxEncrMessage.Name = "textBoxEncrMessage";
             textBoxEncrMessage.ReadOnly = true;
@@ -153,7 +177,7 @@
             // labelMessage
             // 
             labelMessage.AutoSize = true;
-            labelMessage.Location = new Point(12, 99);
+            labelMessage.Location = new Point(12, 143);
             labelMessage.Name = "labelMessage";
             labelMessage.Size = new Size(53, 15);
             labelMessage.TabIndex = 9;
@@ -161,7 +185,7 @@
             // 
             // textBoxPlainText
             // 
-            textBoxPlainText.Location = new Point(138, 96);
+            textBoxPlainText.Location = new Point(138, 140);
             textBoxPlainText.Multiline = true;
             textBoxPlainText.Name = "textBoxPlainText";
             textBoxPlainText.Size = new Size(352, 113);
@@ -229,6 +253,22 @@
             textBoxKeyEncr.Size = new Size(171, 23);
             textBoxKeyEncr.TabIndex = 0;
             // 
+            // labelSegmentSizeDecrypt
+            // 
+            labelSegmentSizeDecrypt.AutoSize = true;
+            labelSegmentSizeDecrypt.Location = new Point(16, 97);
+            labelSegmentSizeDecrypt.Name = "labelSegmentSizeDecrypt";
+            labelSegmentSizeDecrypt.Size = new Size(115, 15);
+            labelSegmentSizeDecrypt.TabIndex = 30;
+            labelSegmentSizeDecrypt.Text = "Segment size (bytes)";
+            // 
+            // textBoxSegmentSizeDecr
+            // 
+            textBoxSegmentSizeDecr.Location = new Point(142, 94);
+            textBoxSegmentSizeDecr.Name = "textBoxSegmentSizeDecr";
+            textBoxSegmentSizeDecr.Size = new Size(171, 23);
+            textBoxSegmentSizeDecr.TabIndex = 29;
+            // 
             // buttonDecrypt
             // 
             buttonDecrypt.Location = new Point(419, 401);
@@ -252,7 +292,7 @@
             // labelDecryptedMessage
             // 
             labelDecryptedMessage.AutoSize = true;
-            labelDecryptedMessage.Location = new Point(16, 238);
+            labelDecryptedMessage.Location = new Point(16, 282);
             labelDecryptedMessage.Name = "labelDecryptedMessage";
             labelDecryptedMessage.Size = new Size(110, 15);
             labelDecryptedMessage.TabIndex = 25;
@@ -260,7 +300,7 @@
             // 
             // textBoxDecrMessage
             // 
-            textBoxDecrMessage.Location = new Point(142, 235);
+            textBoxDecrMessage.Location = new Point(142, 279);
             textBoxDecrMessage.Multiline = true;
             textBoxDecrMessage.Name = "textBoxDecrMessage";
             textBoxDecrMessage.ReadOnly = true;
@@ -270,7 +310,7 @@
             // labelEncrMessageToDecr
             // 
             labelEncrMessageToDecr.AutoSize = true;
-            labelEncrMessageToDecr.Location = new Point(16, 99);
+            labelEncrMessageToDecr.Location = new Point(16, 143);
             labelEncrMessageToDecr.Name = "labelEncrMessageToDecr";
             labelEncrMessageToDecr.Size = new Size(109, 15);
             labelEncrMessageToDecr.TabIndex = 23;
@@ -278,7 +318,7 @@
             // 
             // textBoxEncrMessageToDecrypt
             // 
-            textBoxEncrMessageToDecrypt.Location = new Point(142, 96);
+            textBoxEncrMessageToDecrypt.Location = new Point(142, 140);
             textBoxEncrMessageToDecrypt.Multiline = true;
             textBoxEncrMessageToDecrypt.Name = "textBoxEncrMessageToDecrypt";
             textBoxEncrMessageToDecrypt.Size = new Size(352, 113);
@@ -371,5 +411,9 @@
         private Label labelKeyDecr;
         private TextBox textBoxIVDecr;
         private TextBox textBoxKeyDecr;
+        private Label labelSegmentSizeEncrypt;
+        private TextBox textBoxSegmentSizeEncr;
+        private Label labelSegmentSizeDecrypt;
+        private TextBox textBoxSegmentSizeDecr;
     }
 }
