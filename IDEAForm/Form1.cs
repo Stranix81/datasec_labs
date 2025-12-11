@@ -117,6 +117,12 @@ namespace IDEAForm
                 return;
             }
 
+            if (textBoxSegmentSizeEncr.TextLength == 0)
+            {
+                MessageBox.Show("Enter the segment size (1, 2, 4, or 8)!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string keyToConvert = textBoxKeyEncr.Text.Replace("-", "");
             key = Convert.FromHexString(keyToConvert);
 
@@ -127,7 +133,7 @@ namespace IDEAForm
             var core = new IDEACore();
             core.Init(key);
 
-            var cfb = new CFBIDEA(core, iv);
+            var cfb = new CFBIDEA(core, iv, Int32.Parse(textBoxSegmentSizeEncr.Text));
 
             byte[] msgBytes = Encoding.ASCII.GetBytes(textBoxPlainText.Text);
             byte[] cipher = cfb.Encrypt(msgBytes);
@@ -199,6 +205,12 @@ namespace IDEAForm
                 return;
             }
 
+            if (textBoxSegmentSizeDecr.TextLength == 0)
+            {
+                MessageBox.Show("Enter the segment size (1, 2, 4, or 8)!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string keyToConvert = textBoxKeyDecr.Text.Replace("-", "");
             key = Convert.FromHexString(keyToConvert);
 
@@ -209,7 +221,7 @@ namespace IDEAForm
             var core = new IDEACore();
             core.Init(key);
 
-            var cfb = new CFBIDEA(core, iv);
+            var cfb = new CFBIDEA(core, iv, Int32.Parse(textBoxSegmentSizeDecr.Text));
 
             byte[] recovered = cfb.Decrypt(encryptedMessageBytes);
 
